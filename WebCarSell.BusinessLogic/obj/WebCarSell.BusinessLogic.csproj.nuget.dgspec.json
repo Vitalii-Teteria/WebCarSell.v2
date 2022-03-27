@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {}
+    "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {
+    "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
         "projectName": "WebCarSell.BusinessLogic",
-        "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+        "projectPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\obj\\",
+        "outputPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
