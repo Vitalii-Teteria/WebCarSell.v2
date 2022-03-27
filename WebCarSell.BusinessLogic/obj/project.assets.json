@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "WebCarSell.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/WebCarSell.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebCarSell.DataAccess.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "WebCarSell.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../WebCarSell.DataAccess/WebCarSell.DataAccess.csproj",
+      "msbuildProject": "../WebCarSell.DataAccess/WebCarSell.DataAccess.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "WebCarSell.DataAccess >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Vitalii\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
       "projectName": "WebCarSell.BusinessLogic",
-      "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+      "projectPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\obj\\",
+      "outputPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
