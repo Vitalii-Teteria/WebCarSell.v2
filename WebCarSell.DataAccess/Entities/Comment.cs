@@ -10,7 +10,7 @@ namespace WebCarSell.DataAccess.Entities
 {
     public class Comment : ISoftDeletable
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         public string Comments { get; set; }
