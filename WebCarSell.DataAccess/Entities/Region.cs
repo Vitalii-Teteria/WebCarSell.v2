@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WEBCarSell.DataAccess.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace WEBCarSell.DataAccess.Entities
+namespace WebCarSell.DataAccess.Entities
 {
     public class Region : ISoftDeletable
     {
