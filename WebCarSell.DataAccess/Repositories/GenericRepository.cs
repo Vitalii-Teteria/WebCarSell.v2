@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using WEBCarSell.DataAccess.Interfaces;
 
-namespace WEBCarSell.DataAccess.Interfaces
+namespace WEBCarSell.DataAccess.Repositories
 {
     public class GenericRepository : IRepository
     {

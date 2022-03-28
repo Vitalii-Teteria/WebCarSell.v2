@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UAv6gmVT6QR4GHrWNIylNA1ggTX3Sr2/yBtQyRlJSsJBEP9yI4tYlC18mvmTQB8M4dQu94mTlOQNZmZoFfaF6g==",
+  "dgSpecHash": "kuyQloymLhfUAldIvwM9+YbsxAFlxpKIK5Z4JoHiJMAFiIFiLUIxKFVWCeObuULnva/ezZO7h8h3VXxEX+EwlA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+  "projectFilePath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
