@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCarSell", "WebCarSell\WebCarSell.csproj", "{BAC3843D-D198-4616-AC78-2499CAC1B87E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCarSell", "WebCarSell\WebCarSell.csproj", "{BAC3843D-D198-4616-AC78-2499CAC1B87E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCarSell.DataAccess", "WebCarSell.DataAccess\WebCarSell.DataAccess.csproj", "{0179A62C-07E6-4D84-A5D1-A845BC71C64D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCarSell.DataAccess", "WebCarSell.DataAccess\WebCarSell.DataAccess.csproj", "{0179A62C-07E6-4D84-A5D1-A845BC71C64D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCarSell.BusinessLogic", "WebCarSell.BusinessLogic\WebCarSell.BusinessLogic.csproj", "{E00E7278-297E-4929-A397-52316D9DD910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCarSell.BusinessLogic", "WebCarSell.BusinessLogic\WebCarSell.BusinessLogic.csproj", "{E00E7278-297E-4929-A397-52316D9DD910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

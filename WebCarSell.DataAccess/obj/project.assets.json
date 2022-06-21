@@ -5723,11 +5723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\Vitalii\\Source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
       "projectName": "WebCarSell.DataAccess",
-      "projectPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
+      "projectPath": "C:\\Users\\Vitalii\\Source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
       "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vitalii\\source\\repos\\WebCarSell\\WebCarSell.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\Vitalii\\Source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",

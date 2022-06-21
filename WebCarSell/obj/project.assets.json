@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\WebCarSell.csproj",
+      "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
       "projectName": "WebCarSell",
-      "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\WebCarSell.csproj",
+      "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
       "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\obj\\",
+      "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
