@@ -55,20 +55,3 @@ $(document).ready(function () {
     });
 });
 
-jQuery.validator.addMethod("checkMask", function (value, element) {
-    return /\+\d{2}\(\d{3}\)\d{3}-\d{2}/g.test(value);
-});
-
-$('#add_car').validate({
-    rules: {
-        phone: {
-            checkMask: true
-        }
-    },
-    messages: {
-        phone: {
-            checkMask: "Введите полный номер телефона"
-        }
-    }
-});
-$('.js-phone').mask("+38(999)-999-99", { autoclear: false });

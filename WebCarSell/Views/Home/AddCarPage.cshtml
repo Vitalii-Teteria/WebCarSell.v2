@@ -47,12 +47,6 @@
             width: 280px;
             margin-left: 40%;
         }
-        div
-        {
-            text-align: center;
-            color: black;
-            font-weight: bold;
-        }
     </style>
     <script>
    $(document).ready(function() {
@@ -105,14 +99,17 @@
         if($.inArray(name.split('.').pop().toLowerCase(), fileExtension)==-1){
             $('#photo').after('<span class="error">Неверный формат файла (Допустимые типы(jpg, jpeg))</span>')
         }
-    })
-    </script>
-
+    });
+   
+    jQuery.validator.addMethod("phone", function (value, element) {
+    return /\+\d{2}\(\d{3}\)\d{3}-\d{2}/g.test(value);
+});
+   </script>
 </head>
 <body>
 
    <form id="add_car" class="form" role="form">
-    <div class="container-xl" style="height:1490px">
+    <div class="container-xl" style="height:1490px; text-align:center; font-weight:bold">
         <div class="row" style="border-left:solid; border-right:solid; border-width:thin; border-color:lightgray;">
             <div class="col">
                 <br><label for="inputBrand">Марка авто</label><br>
