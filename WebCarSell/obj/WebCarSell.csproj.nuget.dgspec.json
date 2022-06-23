@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\WebCarSell.csproj": {}
+    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\WebCarSell.csproj": {
+    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\WebCarSell.csproj",
+        "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
         "projectName": "WebCarSell",
-        "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\WebCarSell.csproj",
+        "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
         "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell\\WebCarSell\\obj\\",
+        "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
