@@ -1,8 +1,9 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "RegPage";
 }
+ 
+@model RegisterModel
+
 
 <!DOCTYPE html>
 
@@ -25,7 +26,7 @@
         form
         {
             width: 450px;
-            height: 400px;
+            height: 450px;
             border-style: solid;
             border-width: 2px;
             border-color: white;
@@ -49,50 +50,36 @@
     </style>
 </head>
 <body>
-    <form id="register_form" class="form" role="form" method="post">
-        <div class="container-sm" style="border-left:solid;border-bottom:solid; border-top:solid; border-right:solid; border-width:thin; border-color:lightgray">
-            <div class="row">
-                <label class="labelStyle" style="margin-bottom: 10px; margin-top: 10px; font-weight:bold">Регистрация</label>
-                <div class="col">                    
-                    <label for="emailUser">Логин (e-mail, телефон)</label>           
-                </div>
-                <div class="col">
-                    <input class="form-control" style="width: max-content;"  id="emailUser" name="emailUser" placeholder="Введите Логин">
-                </div>
-                
+    <form asp-action="RegPage" class="border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="labelStyle" style="margin-bottom: 10px; margin-top: 10px; font-weight:bold;">Регистрация</label>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Логин (e-mail, телефон)</label>
+                <input asp-for="Email" class="form-control" placeholder="Введите логин"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
-            <div class="row">
-                <div class="col">
-                    <label for="password">Пароль</label>
-                </div>
-                <div class="col">
-                    <input class="form-control" style="width: max-content;" type="password" id="password" name="password" placeholder="Введите Пароль">
-                </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Пароль</label>
+                <input asp-for="Password" class="form-control" placeholder="Введите Пароль"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
-            <div class="row">
-               <div class="col">
-                   <label for="UserName">Имя</label>
-                   </div>
-                   <div class="col">
-                        <input class="form-control" style="width: max-content;" type="text" id="UserName" name="UserName" placeholder="Введите Свое Имя">
-                   </div>             
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Пароль</label>
+                <input asp-for="Name" class="form-control" placeholder="Введите Свое Имя"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
-            <div class="row">
-               <div class="col">
-                   <label for="Sname">Фамилия</label>
-                   </div>
-                   <div class="col">
-                        <input class="form-control" style="width: max-content;" type="text" id="Sname" name="Sname" placeholder="Введите Свою Фамилию">
-                   </div>             
+            <div class="form-group">
+                <label asp-for="SName" class="control-label">Пароль</label>
+                <input asp-for="SName" class="form-control" placeholder="Введите Свою Фамилию"/>
+                <span asp-validation-for="SName" class="text-danger"></span>
             </div>
-            <div style="height: 40px;"></div>          
-           @* <button class="btn btn-outline-danger" type="submit" style="margin-left: 110px; margin-top: 15px; margin-bottom: 20px; width: 200px; font-weight: bold;" >Зарегистрироваться</button>*@
-           <input type="submit" value="Зарегистрироваться" class="btn btn-outline-danger" style="margin-left: 110px; margin-top: 15px; margin-bottom: 20px; width: 200px; font-weight: bold;"/>
-        </div>       
-    </form>
+            <div style="height: 10px;"></div>
+            <div class="form-group">
+            <input type="submit" value="Зарегистрироваться" class="btn btn-outline-danger" style="font-weight: bold; margin-top:10px; margin-left:120px; margin-bottom:30px" />          
+            </div>
+        </form>
 </body>
-
 </html>

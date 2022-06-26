@@ -1,6 +1,6 @@
-﻿@page
+﻿@model LoginModel
 @{
-    //ViewData["Title"] = "Login Page";
+    ViewData["Title"] = "LoginPage";
 }
 
 <!DOCTYPE html>
@@ -52,33 +52,30 @@
     </style>
 </head>
 <body>
-    <form id="login_form" class="form" role="form" method="post">
-        <div class="container-sm" style="border-left:solid;border-bottom:solid; border-top:solid; border-right:solid; border-width:thin; border-color:lightgray">
-            <div class="row">
-                <label class="labelStyle" style="margin-bottom: 10px; margin-top: 10px; font-weight:bold">Вход для продавцов</label>
-                <div class="col">                    
-                    <label for="emailLog">Логин (e-mail, телефон)</label>           
-                </div>
-                <div class="col">
-                    <input class="form-control" style="width: max-content;"  id="emailLog" name="emailLog" placeholder="Введите логин">
-                </div>
-                
+<form asp-action="LoginPage" class="border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="labelStyle" style="margin-bottom: 10px; margin-top: 10px; font-weight:bold;">Вход для продавцов</label>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Логин (e-mail, телефон)</label>
+                <input asp-for="Email" class="form-control" placeholder="Введите логин"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
-            <div class="row">
-                <div class="col">
-                    <label for="password">Пароль</label>
-                </div>
-                <div class="col">
-                    <input class="form-control" style="width: max-content;" type="password" id="password" name="password" placeholder="Введите пароль">
-                </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Пароль</label>
+                <input asp-for="Password" class="form-control" placeholder="Введите Пароль"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div style="height: 40px;"></div>     
-            <button class="btn btn-outline-danger" type="submit" style="margin-left: 170px; margin-top: 15px; margin-bottom: 20px; width: 80px; font-weight: bold;" >Войти</button>
-            <a class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:115px; margin-bottom:30px" asp-area="" asp-controller="Home" asp-action="RegPage">Зарегистрироваться</a>
-             
-            <br><a href="#" style="margin-left: 95px">Забыли пароль? Восстановить</a>
-        </div>       
-    </form>
+            <div style="height: 10px;"></div>
+            <div class="form-group">
+                <input type="submit" value="Войти" class="btn btn-outline-danger" style="margin-left: 170px; margin-top: 15px; margin-bottom: 20px; width: 80px; font-weight: bold;" />
+                <div style="height: 10px;"></div>
+                <a class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:120px; margin-bottom:30px" asp-area="" asp-controller="Home" asp-action="RegPage">Зарегистрироваться</a>
+                <div style="height: 10px;"></div>
+                <a href="#" style="margin-left: 100px">Забыли пароль? Восстановить</a>
+            </div>
+        </form>
+
+  
 </body>
 </html>
