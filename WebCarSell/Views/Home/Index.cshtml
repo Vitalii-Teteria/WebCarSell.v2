@@ -1,7 +1,6 @@
-﻿@page
-@{
-    //ViewData["Title"] = "Home page";
-}
+﻿
+@model CarModel
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -249,7 +248,13 @@
                      <br><button class="btn btn-outline-danger" type="submit" style="margin-bottom:10px">Поиск</button>          
             </div>
             <div class="col-6 textStyle" style="border-right:solid; text-align: center; border-width:thin; border-color:lightgray" >
-                Объявления 
+               <h6>@Model.Name</h6>
+               <h6>@Model.Year</h6>
+               <h6>@Model.Mileage</h6>
+               <h6>@Model.Engine_Volume</h6>
+               <h6>@Model.Color</h6>
+               <h6>@Model.Transmition</h6>
+
             </div>
         </div>
     </div>

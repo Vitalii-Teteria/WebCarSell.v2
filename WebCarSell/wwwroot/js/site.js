@@ -1,5 +1,4 @@
-﻿$(document).ready(function () {
-    $('#login_form').submit(function (e) {
+﻿    $('#login_form').submit(function (e) {
         e.preventDefault();
         var emailLog = $('#emailLog').val();
         var password = $('#password').val();
@@ -20,9 +19,7 @@
         }
 
     });
-});
 
-$(document).ready(function () {
     $('#register_form').submit(function (e) {
         e.preventDefault();
         var emailUser = $('#emailUser').val();
@@ -44,14 +41,12 @@ $(document).ready(function () {
         if (password.length < 8) {
             $('#password').after('<span class="error">Password must be atleast 8 characterslong</span>');
         }
-        if (UserName.length < 2)
-        {
+        if (UserName.length < 2) {
             $('#UserName').after('<span class="error">User`s name must be atleast 2 characterslong</span>');
         }
-        if (Sname.length < 3)
-        {
+        if (Sname.length < 3) {
             $('#Sname').after('<span class="error">User`s name must be atleast 2 characterslong</span>');
         }
     });
-});
+
 
