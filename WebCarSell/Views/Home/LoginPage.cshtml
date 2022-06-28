@@ -52,19 +52,16 @@
     </style>
 </head>
 <body>
-<form asp-action="LoginPage" class="border">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="LoginPage" class="border" id="login_form">
             <label class="labelStyle" style="margin-bottom: 10px; margin-top: 10px; font-weight:bold;">Вход для продавцов</label>
             <div class="form-group">
                 <label asp-for="Email" class="control-label">Логин (e-mail, телефон)</label>
                 <input asp-for="Email" class="form-control" placeholder="Введите логин"/>
-                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label">Пароль</label>
                 <input asp-for="Password" class="form-control" placeholder="Введите Пароль"/>
-                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div style="height: 10px;"></div>
             <div class="form-group">
@@ -76,6 +73,5 @@
             </div>
         </form>
 
-  
 </body>
 </html>

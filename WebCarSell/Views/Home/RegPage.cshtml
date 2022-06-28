@@ -50,31 +50,26 @@
     </style>
 </head>
 <body>
-    <form asp-action="RegPage" class="border">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="RegPage" class="border" id="register_form">
             <label class="labelStyle" style="margin-bottom: 10px; margin-top: 10px; font-weight:bold;">Регистрация</label>
             <div class="form-group">
                 <label asp-for="Email" class="control-label">Логин (e-mail, телефон)</label>
                 <input asp-for="Email" class="form-control" placeholder="Введите логин"/>
-                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label">Пароль</label>
                 <input asp-for="Password" class="form-control" placeholder="Введите Пароль"/>
-                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label">Пароль</label>
                 <input asp-for="Name" class="form-control" placeholder="Введите Свое Имя"/>
-                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div style="height: 20px;"></div>
             <div class="form-group">
                 <label asp-for="SName" class="control-label">Пароль</label>
                 <input asp-for="SName" class="form-control" placeholder="Введите Свою Фамилию"/>
-                <span asp-validation-for="SName" class="text-danger"></span>
             </div>
             <div style="height: 10px;"></div>
             <div class="form-group">
