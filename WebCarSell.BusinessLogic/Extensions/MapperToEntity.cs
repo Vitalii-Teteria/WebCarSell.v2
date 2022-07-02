@@ -29,22 +29,22 @@ namespace WEBCarSell.BusinessLogic.Extensions
                     Brand = model.Brand
                 };
         }
-        public static Client ToEntity(this ClientDto model)
+        public static User ToEntity(this UserDto model)
         {
             return model == null ? null :
-                new Client
+                new User
                 {
                     Id = model.Id,
                     Name = model.Name,
-                    City = model.City,
+                    SName = model.SName,
                     Phone = model.Phone,
                     Email = model.Email
                 };
         }
-        public static Employee ToEntity(this EmployeeDto model)
+        public static Administrator ToEntity(this AdministratorDto model)
         {
             return model == null ? null :
-                new Employee
+                new Administrator
                 {
                     Name = model.Name,
                     Phone = model.Phone,

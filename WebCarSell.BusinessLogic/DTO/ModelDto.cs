@@ -9,7 +9,7 @@ namespace WEBCarSell.BusinessLogic.DTO
 {
     public class ModelDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
@@ -25,12 +25,11 @@ namespace WEBCarSell.BusinessLogic.DTO
 
         public string Drive { get; set; }
 
-        public Brand Brand { get; set; }
-
         public int Price { get; set; }
 
         public Car_body Body { get; set; }
 
         public Region Region { get; set; }
+        public Brand Brand { get; set; }
     }
 }
