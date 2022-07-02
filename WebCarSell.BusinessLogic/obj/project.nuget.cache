@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3VI8jyvmYMIRFRl2oHvKJycyt9QI6qm0JOAVZWUc6GJ3OtpcqpVCwWSkZz+0DX6iIx/2dcv8X5cSYx2TMyYx3w==",
+  "dgSpecHash": "MGnvr3bwoxDJZloZMcQzRS53mrTOmIdu0YV9IIueZkSQUlBXm0Gzhu/k3f2NeKg4b23JNk7oLBpTt2iSnox4qA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vitalii\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Vitalii\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Vitalii\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.6\\microsoft.entityframeworkcore.6.0.6.nupkg.sha512",
