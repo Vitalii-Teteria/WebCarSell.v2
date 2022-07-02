@@ -1,18 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 using WebCarSell.Models;
+using WEBCarSell.BusinessLogic.DTO;
+using WEBCarSell.BusinessLogic.Interfaces;
 
 namespace WebCarSell.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICarSellService _carSellService;
+        private readonly IMapper _mapper;
         List<LoginModel> loginModels;
         List<RegisterModel> registerModels;
         CarModel carModels;
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICarSellService carSellService, IMapper mapper)
         {
+            _carSellService = carSellService;
             _logger = logger;
+            _mapper = mapper;
             loginModels = new List<LoginModel>() 
             {
                 new LoginModel(1,"asd@gmail.com","adcdsg1f"),
@@ -32,21 +40,43 @@ namespace WebCarSell.Controllers
             };
         }
         [HttpGet]
-        public IActionResult Index()
-        {        
-            return View(carModels);
+        public async Task<ActionResult<List<ModelView>>> Index()
+        {
+            var model = await _carSellService.GetModels();
+            var models = new List<ModelView>();
+            foreach (var modelcar in model) 
+            {
+                models.Add(_mapper.Map<ModelView>(modelcar));
+            }
+            
+            return View(models);
         }
         [HttpGet]
-        public IActionResult Test()
+        public  async Task<ActionResult<List<RegionModelView>>> AddModel() 
         {
+            var models = await _carSellService.GetRegions();
+            var regions = new List<RegionModelView>();
+            foreach (var region in models) 
+            {
+                regions.Add(_mapper.Map<RegionModelView>(region));
+            }
+            //ViewBag.AddInfo = new SelectList(await _carSellService.GetModels(), "BrandId", "BodyId", "RegionId");
             return View();
         }
         [HttpPost]
-        public string Test(int id, string name) 
+        public async Task<IActionResult> AddModel(ModelView model) 
         {
-            return $"{id}----{name}";
-        }
 
+            var models =_mapper.Map<ModelDto>(model);
+            await _carSellService.AddModel(models);
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<ActionResult> GetModelById(Guid? id) 
+        {
+            var result = await _carSellService.GetModelById(id);
+            return result==null? NotFound() : View(result);
+        }
         public IActionResult AddCarPage() 
         {
             return View();
@@ -82,12 +112,6 @@ namespace WebCarSell.Controllers
             }
             else
                 return NotFound();
-        }
-
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,5 +1,5 @@
 ﻿
-@model CarModel
+@model List<ModelView>
 
 <!DOCTYPE html>
 
@@ -36,10 +36,7 @@
     <form id="main_form" class="form" role="form" method="post">
     <div class="container-xl" style="background-color:white; height:900px">
         <div class="row">
-            <div class="col-3 textStyle" style="border-left:solid; border-right:solid; border-width:thin; border-color:lightgray">
-                Новости
-            </div>
-            <div class="col-3 textStyle", style="border-right:solid; text-align: center; border-width:thin; border-color:lightgray">
+            <div class="col-3 textStyle", style="border-left:solid;border-right:solid; text-align: center; border-width:thin; border-color:lightgray">
                 Расширенный поиск
                 <br><label for="inputBrand", style="margin-top: 10px;">Марка авто</label><br>
                 <input class="form-control" type="text" id="inputBrand" name="inputBrand" placeholder="Введите название марки">
@@ -247,14 +244,16 @@
                      <!--<br><a href="#" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" type="submit">Поиск</a>-->
                      <br><button class="btn btn-outline-danger" type="submit" style="margin-bottom:10px">Поиск</button>          
             </div>
-            <div class="col-6 textStyle" style="border-right:solid; text-align: center; border-width:thin; border-color:lightgray" >
-               <h6>@Model.Name</h6>
-               <h6>@Model.Year</h6>
-               <h6>@Model.Mileage</h6>
-               <h6>@Model.Engine_Volume</h6>
-               <h6>@Model.Color</h6>
-               <h6>@Model.Transmition</h6>
-
+            <div class="col-9 textStyle" style="border-right:solid; text-align: center; border-width:thin; border-color:lightgray" >
+                    @{
+                        List<ModelView> models = new List<ModelView>();
+                    }
+                    @foreach(var carmodel in Model)
+                    {
+                        <h6>@carmodel.Name</h6>
+                        <h6>@carmodel.Price</h6>
+                        <h6>@carmodel.Color</h6>
+                    }
             </div>
         </div>
     </div>
