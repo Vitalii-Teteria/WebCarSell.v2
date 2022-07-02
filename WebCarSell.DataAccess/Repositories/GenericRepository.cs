@@ -6,15 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using WebCarSell.DataAccess.Context;
 using WEBCarSell.DataAccess.Interfaces;
 
 namespace WEBCarSell.DataAccess.Repositories
 {
     public class GenericRepository : IRepository
     {
-        private readonly WEBCarSellDBContext _dbContext;
+        private readonly ApplicationContext _dbContext;
 
-        public GenericRepository(WEBCarSellDBContext dbContext)
+        public GenericRepository(ApplicationContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -30,21 +31,21 @@ namespace WEBCarSell.DataAccess.Repositories
         {
             entity.IsDeleted = true;
             _dbContext.Entry(entity).State = EntityState.Modified;
-            return _dbContext.SaveChanges();
+            return _dbContext.SaveChangesAsync();
         }
 
         public async Task HardDelete<TEntity>(TEntity entity) where TEntity : class
         {
             _dbContext.Set<TEntity>().Remove(entity);
-            await _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<TEntity>> GetAll<TEntity>() where TEntity : class
         {
-            return await _dbContext.Set<TEntity>().ToList();
+            return await _dbContext.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<TEntity> GetById<TEntity>(int id) where TEntity : class
+        public async Task<TEntity> GetById<TEntity>(Guid? id) where TEntity : class
         {
             return await _dbContext.Set<TEntity>().FindAsync(id);
         }
@@ -52,7 +53,7 @@ namespace WEBCarSell.DataAccess.Repositories
         public async Task Update<TEntity>(TEntity entity) where TEntity : class
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
-            return await _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<bool> IfExist<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class

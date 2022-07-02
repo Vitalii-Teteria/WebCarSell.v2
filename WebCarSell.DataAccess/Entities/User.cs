@@ -8,16 +8,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebCarSell.DataAccess.Entities
 {
-    public class Client : ISoftDeletable
+    public class User : ISoftDeletable
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [StringLength(40, MinimumLength = 3)]
         public string Name { get; set; }
 
         [Required(AllowEmptyStrings = false)]
-        public string City { get; set; }
+        [StringLength(40, MinimumLength = 3)]
+        public string SName { get; set; }
 
         [Required(ErrorMessage = "Phone Number Required!")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",

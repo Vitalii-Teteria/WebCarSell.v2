@@ -10,7 +10,7 @@ namespace WebCarSell.DataAccess.Entities
 {
     public class Model : ISoftDeletable
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [StringLength(40, MinimumLength = 3)]
@@ -34,7 +34,6 @@ namespace WebCarSell.DataAccess.Entities
         [Required(AllowEmptyStrings = false)]
         public string Drive { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
         public Brand Brand { get; set; }
 
         public bool IsDeleted { get; set; }
@@ -42,10 +41,8 @@ namespace WebCarSell.DataAccess.Entities
         [Required(AllowEmptyStrings = false)]
         public int Price { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
         public Car_body Body { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
         public Region Region { get; set; }
     }
 

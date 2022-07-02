@@ -10,7 +10,7 @@ namespace WebCarSell.DataAccess.Entities
 {
     public class Car_body : ISoftDeletable
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [StringLength(40, MinimumLength = 3)]

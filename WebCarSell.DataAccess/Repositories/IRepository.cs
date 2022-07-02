@@ -14,7 +14,7 @@ namespace WEBCarSell.DataAccess.Repositories
 
         Task<IEnumerable<TEntity>> GetAll<TEntity>() where TEntity : class;
 
-        Task<TEntity> GetById<TEntity>(int id) where TEntity : class;
+        Task<TEntity> GetById<TEntity>(Guid? id) where TEntity : class;
 
         Task<TEntity> Create<TEntity>(TEntity entity) where TEntity : class;
 
