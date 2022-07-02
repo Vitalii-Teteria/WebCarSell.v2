@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace WEBCarSell.BusinessLogic.DTO
 {
-    public class ClientDto
+    public class UserDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
+
+        public string SName { get; set; }
 
         public string City { get; set; }
 

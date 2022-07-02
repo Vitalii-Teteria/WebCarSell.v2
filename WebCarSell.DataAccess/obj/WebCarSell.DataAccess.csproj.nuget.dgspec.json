@@ -48,6 +48,12 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "System.Threading.Tasks.Extensions": {
               "target": "Package",
               "version": "[4.5.4, )"

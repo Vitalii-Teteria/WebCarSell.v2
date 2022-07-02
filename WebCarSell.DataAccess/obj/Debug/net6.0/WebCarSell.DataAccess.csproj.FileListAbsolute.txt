@@ -1,0 +1,14 @@
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.deps.json
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.runtimeconfig.json
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.pdb
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.AssemblyInfo.cs
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\refint\WebCarSell.DataAccess.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.pdb
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.genruntimeconfig.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\ref\WebCarSell.DataAccess.dll

@@ -1,0 +1,15 @@
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.AssemblyInfo.cs
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\bin\Debug\net6.0\WebCarSell.BusinessLogic.deps.json
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\bin\Debug\net6.0\WebCarSell.BusinessLogic.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\bin\Debug\net6.0\WebCarSell.BusinessLogic.pdb
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\bin\Debug\net6.0\WebCarSell.DataAccess.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\bin\Debug\net6.0\WebCarSell.DataAccess.pdb
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.csproj.CopyComplete
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\refint\WebCarSell.BusinessLogic.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\WebCarSell.BusinessLogic.pdb
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.BusinessLogic\obj\Debug\net6.0\ref\WebCarSell.BusinessLogic.dll
