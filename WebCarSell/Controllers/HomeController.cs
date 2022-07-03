@@ -39,6 +39,7 @@ namespace WebCarSell.Controllers
                 Transmition="Automatic"
             };
         }
+
         [HttpGet]
         public async Task<ActionResult<List<ModelView>>> Index()
         {
@@ -51,18 +52,16 @@ namespace WebCarSell.Controllers
             
             return View(models);
         }
+
         [HttpGet]
-        public  async Task<ActionResult<List<RegionModelView>>> AddModel() 
+        public  async Task<ActionResult<RegionModelView>> AddModel() 
         {
-            var models = await _carSellService.GetRegions();
-            var regions = new List<RegionModelView>();
-            foreach (var region in models) 
-            {
-                regions.Add(_mapper.Map<RegionModelView>(region));
-            }
-            //ViewBag.AddInfo = new SelectList(await _carSellService.GetModels(), "BrandId", "BodyId", "RegionId");
+            ViewBag.AddInfo = new SelectList(await _carSellService.GetRegions(), "RegionId", "Name");
+         
             return View();
+
         }
+
         [HttpPost]
         public async Task<IActionResult> AddModel(ModelView model) 
         {
@@ -71,21 +70,20 @@ namespace WebCarSell.Controllers
             await _carSellService.AddModel(models);
             return View(model);
         }
+
         [HttpGet]
         public async Task<ActionResult> GetModelById(Guid? id) 
         {
             var result = await _carSellService.GetModelById(id);
             return result==null? NotFound() : View(result);
         }
-        public IActionResult AddCarPage() 
-        {
-            return View();
-        }
+
         [HttpGet]
         public IActionResult LoginPage()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult LoginPage(LoginModel? model)
         {
@@ -113,7 +111,10 @@ namespace WebCarSell.Controllers
             else
                 return NotFound();
         }
-
+        public IActionResult Privacy()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
