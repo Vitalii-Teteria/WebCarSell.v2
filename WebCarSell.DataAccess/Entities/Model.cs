@@ -34,16 +34,16 @@ namespace WebCarSell.DataAccess.Entities
         [Required(AllowEmptyStrings = false)]
         public string Drive { get; set; }
 
-        public Brand Brand { get; set; }
+        public Guid BrandId { get; set; }
 
         public bool IsDeleted { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         public int Price { get; set; }
 
-        public Car_body Body { get; set; }
+        public Guid BodyId { get; set; }
 
-        public Region Region { get; set; }
+        public Guid RegionId { get; set; }
     }
 
     public class Photos
