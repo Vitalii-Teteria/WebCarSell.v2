@@ -272,3 +272,8 @@ C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\AutoMapp
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\WebCarSell.BusinessLogic.dll
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\WebCarSell.BusinessLogic.pdb
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
