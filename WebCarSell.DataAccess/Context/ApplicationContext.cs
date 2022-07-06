@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,13 @@ using WebCarSell.DataAccess.Entities;
 
 namespace WebCarSell.DataAccess.Context
 {
-    public class ApplicationContext :DbContext
+    public class ApplicationContext : IdentityDbContext<User>
     {
         public DbSet<Administrator> Administrators { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Car_body> car_Bodies { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Region> Regions { get; set; }
-        public DbSet<User> Users { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) 
             : base(options)

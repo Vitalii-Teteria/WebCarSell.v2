@@ -1,0 +1,34 @@
+﻿@model WebCarSell.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h4 style="text-align:center; color:red; margin-top:30px;font-weight:bold">Login WebCarSell</h4>
+
+<div class="container">
+<div class="row justify-content-md-center">
+    <div class="col-md-4" style="padding-top:5%; padding-bottom:10%">
+        <form asp-action="Login" method="post" asp-route-returnUrl="@Model.ReturnUrl">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Login" class="control-label"></label>
+                <input asp-for="Login" class="form-control" />
+                <span asp-validation-for="Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-check">
+                <label asp-for="RememberMe" class="control-label"></label>
+                <input type="checkbox" asp-for="RememberMe" class="form-check-input" />        
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:150px" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>

@@ -13,31 +13,13 @@ namespace WebCarSell.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ICarSellService _carSellService;
         private readonly IMapper _mapper;
-        List<LoginModel> loginModels;
-        List<RegisterModel> registerModels;
-        CarModel carModels;
+
         public HomeController(ILogger<HomeController> logger, ICarSellService carSellService, IMapper mapper)
         {
             _carSellService = carSellService;
             _logger = logger;
             _mapper = mapper;
-            loginModels = new List<LoginModel>() 
-            {
-                new LoginModel(1,"asd@gmail.com","adcdsg1f"),
-                new LoginModel(2,"asd1@gmail.com","adcdsg3f"),
-            };
-            registerModels = new List<RegisterModel>();
          
-            carModels = new CarModel()
-            {
-                Id=1,
-                Name="BMW",
-                Year=2021,
-                Mileage=2123,
-                Engine_Volume=4,
-                Color="Black",
-                Transmition="Automatic"
-            };
         }
 
         [HttpGet]
@@ -54,10 +36,14 @@ namespace WebCarSell.Controllers
         }
 
         [HttpGet]
-        public  async Task<ActionResult<RegionModelView>> AddModel() 
+        public  async Task<ActionResult> AddModel() 
         {
-            ViewBag.AddInfo = new SelectList(await _carSellService.GetRegions(), "RegionId", "Name");
-         
+            var modelRegion = await _carSellService.GetRegions();
+            var modelBrand = await _carSellService.GetBrands();
+            var modelBody = await _carSellService.GetBody();
+            ViewBag.Region = new SelectList(modelRegion, "Id", "Name");
+            ViewBag.Brand = new SelectList(modelBrand, "Id", "Name");
+            ViewBag.Body = new SelectList(modelBody, "Id", "Name");
             return View();
 
         }
@@ -71,12 +57,12 @@ namespace WebCarSell.Controllers
             return View(model);
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetModelById(Guid? id) 
-        {
-            var result = await _carSellService.GetModelById(id);
-            return result==null? NotFound() : View(result);
-        }
+        //[HttpGet]
+        //public async Task<ActionResult> GetModelById(Guid? id) 
+        //{
+        //    var result = await _carSellService.GetModelById(id);
+        //    return result==null? NotFound() : View(result);
+        //}
 
         [HttpGet]
         public IActionResult LoginPage()
@@ -84,33 +70,6 @@ namespace WebCarSell.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult LoginPage(LoginModel? model)
-        {
-            if (model != null) 
-            {
-                loginModels.Add(model);
-                return Ok($"Email: {model.Email}---- Password:{model.Password}");
-            }
-            else
-                return NotFound();
-        }
-        [HttpGet]
-        public IActionResult Regpage()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult RegPage(RegisterModel? model) 
-        {
-            if (model != null)
-            {
-                registerModels.Add(model);
-                return Ok($"Email:{model.Email}---Password:{model.Password}----Name:{model.Name}---{model.SName}");
-            }
-            else
-                return NotFound();
-        }
         public IActionResult Privacy()
         {
             return View();
