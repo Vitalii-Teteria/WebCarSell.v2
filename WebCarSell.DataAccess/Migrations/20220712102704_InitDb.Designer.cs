@@ -12,7 +12,7 @@ using WebCarSell.DataAccess.Context;
 namespace WebCarSell.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220704183300_InitDb")]
+    [Migration("20220712102704_InitDb")]
     partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -274,6 +274,25 @@ namespace WebCarSell.DataAccess.Migrations
                     b.ToTable("Models");
                 });
 
+            modelBuilder.Entity("WebCarSell.DataAccess.Entities.Photos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("Data")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PhotoName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Photos");
+                });
+
             modelBuilder.Entity("WebCarSell.DataAccess.Entities.Region", b =>
                 {
                     b.Property<Guid>("Id")
@@ -337,6 +356,9 @@ namespace WebCarSell.DataAccess.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Roles")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SName")
                         .IsRequired()

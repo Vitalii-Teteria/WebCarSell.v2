@@ -45,13 +45,4 @@ namespace WebCarSell.DataAccess.Entities
 
         public Guid RegionId { get; set; }
     }
-
-    public class Photos
-    {
-        public int Id { get; private set; }
-
-        public string PhotoName { get; private set; }
-
-        public byte[] Data { get; private set; }
-    }
 }

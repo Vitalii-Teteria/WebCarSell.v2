@@ -5,6 +5,9 @@ namespace WebCarSell.Models
     public class RegisterViewModel
     {
         public Guid Id { get; set; }
+
+        [Required]
+        public string? Roles { get; set; }
         [Required]
         public string? Login { get; set; }
 

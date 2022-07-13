@@ -272,6 +272,25 @@ namespace WebCarSell.DataAccess.Migrations
                     b.ToTable("Models");
                 });
 
+            modelBuilder.Entity("WebCarSell.DataAccess.Entities.Photos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("Data")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PhotoName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Photos");
+                });
+
             modelBuilder.Entity("WebCarSell.DataAccess.Entities.Region", b =>
                 {
                     b.Property<Guid>("Id")
@@ -335,6 +354,9 @@ namespace WebCarSell.DataAccess.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Roles")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SName")
                         .IsRequired()

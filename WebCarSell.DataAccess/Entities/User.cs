@@ -16,6 +16,8 @@ namespace WebCarSell.DataAccess.Entities
         [StringLength(40, MinimumLength = 3)]
         public string SName { get; set; }
 
+        public string Roles { get; set; }
+
         public bool IsDeleted { get; set; }
     }
 }

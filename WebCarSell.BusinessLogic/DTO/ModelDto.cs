@@ -27,9 +27,9 @@ namespace WEBCarSell.BusinessLogic.DTO
 
         public int Price { get; set; }
 
-        public Car_body Body { get; set; }
+        public Guid BodyId { get; set; }
 
-        public Region Region { get; set; }
-        public Brand Brand { get; set; }
+        public Guid RegionId { get; set; }
+        public Guid BrandId { get; set; }
     }
 }
