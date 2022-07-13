@@ -16,6 +16,7 @@ namespace WebCarSell.DataAccess.Context
         public DbSet<Car_body> car_Bodies { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Region> Regions { get; set; }
+        public DbSet<Photos> Photos { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) 
             : base(options)
