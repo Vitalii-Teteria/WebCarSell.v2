@@ -277,3 +277,5 @@ C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsof
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
