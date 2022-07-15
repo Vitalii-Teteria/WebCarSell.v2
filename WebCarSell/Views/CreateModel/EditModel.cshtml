@@ -3,9 +3,9 @@
 *@
 @model WebCarSell.Models.ModelView
 
-<title>Add a new car </title>
+<title>Edit information about a Car </title>
 
-<h4 style="text-align:center; color:red; margin-top:30px;font-weight:bold">Add a new Car to our Store</h4>
+<h4 style="text-align:center; color:red; margin-top:30px;font-weight:bold">Edit your Announcement</h4>
 
 <div class="container">
 <div class="row justify-content-md-center">
@@ -22,7 +22,6 @@
             <div class="form-group">
                  <label asp-for="Mileage" class="control-label">Mileage</label>
                  <input asp-for="Mileage" class="form-control"/>
-
             </div>
              <div class="form-group">
                  <label asp-for="Engine_Volume" class="control-label">Engine_Volume</label>
@@ -45,19 +44,7 @@
                  <input asp-for="Price" class="form-control"/>
             </div>
             <div class="form-group">
-                 <label asp-for="RegionId" class="control-label">Region</label>
-                 <select asp-for="RegionId" required class="form-select" asp-items="ViewBag.Region"></select>
-            </div>
-            <div class="form-group">
-                 <label asp-for="BrandId" class="control-label">Brand</label>
-                 <select asp-for="BrandId" required class="form-select" asp-items="ViewBag.Brand"></select>
-            </div>
-            <div class="form-group">
-                 <label asp-for="BodyId" class="control-label">Body</label>
-                 <select asp-for="BodyId" required class="form-select" asp-items="ViewBag.Body"></select>
-            </div> 
-            <div class="form-group">
-                <input type="submit" value="Edit Information" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:150px" />
+                <input type="submit" value="Edit Information" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:130px" />
             </div>
         </form>
      </div>

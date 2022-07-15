@@ -59,16 +59,10 @@ namespace WebCarSell.Controllers
             return View(registerView);
         }
 
-        //[HttpGet]
-        //public IActionResult Login(string? returnUrl = null) 
-        //{
-        //    return View(new LoginViewModel { ReturnUrl = returnUrl });
-        //}
-
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login(string? returnUrl = null)
         {
-            return View();
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
         [HttpPost]

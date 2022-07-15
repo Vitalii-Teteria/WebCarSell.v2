@@ -52,7 +52,7 @@ namespace WEBCarSell.DataAccess.Repositories
 
         public async Task Update<TEntity>(TEntity entity) where TEntity : class
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
+            _dbContext.Update(entity);
             await _dbContext.SaveChangesAsync();
         }
 

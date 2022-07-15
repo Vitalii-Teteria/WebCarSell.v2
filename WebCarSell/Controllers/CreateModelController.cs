@@ -46,42 +46,52 @@ namespace WebCarSell.Controllers
             return View(model);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> List(string? name)
-        //{
+        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> ModelsList() 
+        {
+            var model = await _carSellService.GetModels();
+            var models = new List<ModelView>();
+            foreach (var item in model) 
+            {
+                models.Add(_mapper.Map<ModelView>(item));
+            }
 
-        //    //if (!string.IsNullOrEmpty(name))
-        //    //{
-        //    //    courses = courses.Where(s => s.Name == name);
-        //    //}
-        //    return View();
-        //}
-        //[HttpGet]
-        //public async Task<ActionResult> EditModel(Guid? id)
-        //{
-        //    if (id != null)
-        //    {
-        //        var requestId = await _carSellService.GetModelById(id);
-        //        var request = _mapper.Map<ModelDto, ModelView>(requestId);
-        //        var modelRegion = await _carSellService.GetRegions();
-        //        var modelBrand = await _carSellService.GetBrands();
-        //        var modelBody = await _carSellService.GetBody();
-        //        ViewBag.Region = new SelectList(modelRegion, "Id", "Name");
-        //        ViewBag.Brand = new SelectList(modelBrand, "Id", "Name");
-        //        ViewBag.Body = new SelectList(modelBody, "Id", "Name");
-        //        return View(request);
-        //    }
-        //    return NotFound();
-        //}
-        //[HttpPost]
-        //public async Task<ActionResult> EditModel(ModelView modelView)
-        //{
+            ModelsListModel modelView = new ModelsListModel
+                (
+                    models
+                );
+            return View(modelView);
 
-        //    var models = _mapper.Map<ModelView, ModelDto>(modelView);
-        //    await _carSellService.UpdateModel(models);
-        //    return View();
-        //}
+        }
 
+        [HttpGet]
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> EditModel(Guid? id)
+        {
+            if (id != null)
+            {
+                var requestId = await _carSellService.GetModelById(id);
+                var model = _mapper.Map<ModelView>(requestId);
+                if(requestId!=null) return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditModel(ModelView modelView)
+        {
+            var models =_mapper.Map<ModelDto>(modelView);
+            await _carSellService.UpdateModel(models);
+            return RedirectToAction("ModelsList","CreateModel");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<ActionResult> ModelPage()
+        {
+            return View();
+        }
 
     }
 }
