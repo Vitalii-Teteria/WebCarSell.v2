@@ -25,16 +25,24 @@ namespace WebCarSell.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ModelView>>> Index()
+        public async Task<ActionResult> Index(int page=1)
         {
+            int pageSize = 3;
             var model = await _carSellService.GetModels();
             var models = new List<ModelView>();
             foreach (var modelcar in model) 
             {
                 models.Add(_mapper.Map<ModelView>(modelcar));
             }
-            
-            return View(models);
+            var count =  models.Count();
+            var item =  models.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            OperationDataViewModel modelView = new OperationDataViewModel
+            (
+                new PageViewModel(count, page, pageSize),
+                item
+            );
+            return View(modelView);
         }
 
         public IActionResult Privacy()

@@ -56,7 +56,7 @@ namespace WEBCarSell.BusinessLogic.Services
         }
         public async Task UpdateModel(ModelDto model) 
         {
-            var result = _mapper.Map<ModelDto, Model>(model);
+            var result = _mapper.Map<Model>(model);
             await _repository.Update(result);
         }
         //public async Task<IEnumerable<ModelDto>> GetModelsList(Guid? id)
@@ -67,7 +67,7 @@ namespace WEBCarSell.BusinessLogic.Services
 
         public async Task<ModelDto> GetModelById(Guid? id)
         {
-            var model = await _repository.GetWhere<Model>(x => x.Id == id);
+            var model = await _repository.GetById<Model>(id);
             return _mapper.Map<ModelDto>(model);
         }
         public async Task<IEnumerable<UserDto>> GetUsers()

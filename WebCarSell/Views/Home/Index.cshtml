@@ -1,4 +1,4 @@
-﻿@model List<ModelView>
+﻿@model OperationDataViewModel
 
 <!DOCTYPE html>
 
@@ -243,20 +243,20 @@
                     @{
                         List<ModelView> models = new List<ModelView>();
                     }
-                    @foreach(var carmodel in Model)
+                    @foreach(var carmodel in Model.ModelView)
                     {
                         <div class="container-fluid border">
                             <div class="row">
                                 <div class="col">
-                                    <label>Car Model:</label>
+                                    <label style="font-weight:bold">Car Model:</label>
                                 </div>
                                 <div class="col">
-                                    <div>@carmodel.Name</div>
+                                    <a asp-action="ModelPage" asp-controller="CreateModel">@carmodel.Name</a>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label>Price:</label>
+                                    <label style="font-weight:bold">Price:</label>
                                 </div>
                                 <div class="col">
                                    <div>@carmodel.Price</div>
@@ -264,7 +264,7 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label>Color:</label>
+                                    <label style="font-weight:bold">Color:</label>
                                 </div>
                                 <div class="col">
                                    <div>@carmodel.Color</div>
@@ -272,7 +272,7 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label>Drive:</label>
+                                    <label style="font-weight:bold">Drive:</label>
                                 </div>
                                 <div class="col">
                                    <div>@carmodel.Drive</div>
@@ -280,7 +280,7 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label>Engine_Volume:</label>
+                                    <label style="font-weight:bold">Engine_Volume:</label>
                                 </div>
                                 <div class="col">
                                    <div>@carmodel.Engine_Volume</div>
@@ -288,6 +288,30 @@
                             </div>
                         </div>
                     }
+            <div style="margin-top:20px">
+                <ul class="pagination justify-content-center">     
+                        @if (Model.PageViewModel.HasPreviousPage==true)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.PageViewModel.PageNumber-1)">Previous</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <a class="page-link">Previous</a>    
+                        }
+                        @if(Model.PageViewModel.HasNextPage==true)
+                        {
+                             <li class="page-item">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.PageViewModel.PageNumber+1)">Next</a>
+                             </li>
+                        }
+                        else
+                        {
+                             <a class="page-link">Next</a>    
+                        }                   
+                    </ul>
+            </div>
             </div>
         </div>
     </div>
