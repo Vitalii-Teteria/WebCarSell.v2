@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using WebCarSell.Models;
+using WebCarSell.Other;
 using WEBCarSell.BusinessLogic.DTO;
 using WEBCarSell.BusinessLogic.Interfaces;
 
@@ -21,7 +23,6 @@ namespace WebCarSell.Controllers
             _carSellService = carSellService;
             _logger = logger;
             _mapper = mapper;
-
         }
 
         [HttpGet]
@@ -48,7 +49,7 @@ namespace WebCarSell.Controllers
 
         [AllowAnonymous]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> ModelsList() 
+        public async Task<IActionResult> ModelsList(string? name,SortState sortOrder = SortState.NameAsc) 
         {
             var model = await _carSellService.GetModels();
             var models = new List<ModelView>();
@@ -56,10 +57,24 @@ namespace WebCarSell.Controllers
             {
                 models.Add(_mapper.Map<ModelView>(item));
             }
+            IQueryable<ModelView> query = models.AsQueryable();
+            query = sortOrder switch
+            {
+                SortState.NameAsc => query.OrderBy(c => c.Name),
+                SortState.NameDesc => query.OrderByDescending(c => c.Name),
+                SortState.MileageAsc => query.OrderBy(c => c.Mileage),
+                SortState.MileageDesc => query.OrderByDescending(c => c.Mileage)
+            };
+            if (!string.IsNullOrEmpty(name))
+            {
+                query.Where(s => s.Name!.Contains(name));
+            }
 
             ModelsListModel modelView = new ModelsListModel
                 (
-                    models
+                    models,
+                    new SortViewModel(sortOrder),
+                    new FilterViewModel(models,name)
                 );
             return View(modelView);
 
@@ -88,10 +103,32 @@ namespace WebCarSell.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult> ModelPage()
+        public async Task<IActionResult> ModelPage(Guid? id)
         {
-            return View();
+            var request = await _carSellService.GetModelById(id);
+            var model = _mapper.Map<ModelView>(request);
+            return View(model);
         }
 
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteModel(Guid? id) 
+        {
+            if (id != null) 
+            {
+                var request = await _carSellService.GetModelById(id);
+                var model = _mapper.Map<ModelView>(request);
+                if (request != null) return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteModel(ModelView modelView)
+        {
+            var models = _mapper.Map<ModelDto>(modelView);
+            await _carSellService.DeleteModel(models);
+            return RedirectToAction("ModelsList", "CreateModel");
+        }
     }
 }

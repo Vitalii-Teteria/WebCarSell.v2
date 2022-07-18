@@ -15,6 +15,7 @@ namespace WEBCarSell.BusinessLogic.Interfaces
         //Task<ModelDto> DeleteModel(Guid? id);
         Task<IEnumerable<RegionDto>> GetRegions();
         Task UpdateModel(ModelDto model);
+        Task DeleteModel(ModelDto model);
         Task<IEnumerable<BrandDto>> GetBrands();
         Task<IEnumerable<Car_bodyDto>> GetBody();
         Task<ModelDto> GetModelById(Guid? id);

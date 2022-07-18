@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 using WebCarSell.Models;
 using WEBCarSell.BusinessLogic.DTO;
@@ -27,8 +24,8 @@ namespace WebCarSell.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(int page=1)
         {
-            int pageSize = 3;
-            var model = await _carSellService.GetModels();
+            int pageSize = 6;
+            var model = await _carSellService.GetModels();           
             var models = new List<ModelView>();
             foreach (var modelcar in model) 
             {
