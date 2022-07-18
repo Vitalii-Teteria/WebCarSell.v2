@@ -1,17 +1,30 @@
 ﻿@using WebCarSell.Models;
+@addTagHelper *, WebCarSell
 @model ModelsListModel
 @{
     ViewData["Title"] = "List";
 }
 
 <h1>All Announcements</h1>
-
+<form method="get">
+    <div>
+        <label>Name</label>
+        <input asp-for="ModelView.FirstOrDefault().Name"/>
+        <input type="submit" value="Filter"/>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>
+                <sort-header action="ModelsList" up="@Model.SortViewModel.Up" current="@Model.SortViewModel.Current"
+                    property="@Model.SortViewModel.NameSort">Name</sort-header>
+            </th>
             <th>Year</th>
-            <th>Mileage</th>
+             <th>
+                <sort-header action="ModelsList" up="@Model.SortViewModel.Up" current="@Model.SortViewModel.Current"
+                    property="@Model.SortViewModel.Mileage">Mileage</sort-header>
+            </th>
             <th>Engine Volume</th>
             <th>Color</th>
             <th>Transmission</th>
@@ -50,7 +63,7 @@
             <td>
                 <a asp-action="EditModel" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="DeleteModel" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

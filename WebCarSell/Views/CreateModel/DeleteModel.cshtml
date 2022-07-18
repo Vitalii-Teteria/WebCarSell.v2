@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ModelView
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4" style="padding-top:5%; padding-bottom:10%">
+            <form asp-action="DeleteModel" method="post">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Year" class="control-label">Year</label>
+                    <input asp-for="Year" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mileage" class="control-label">Mileage</label>
+                    <input asp-for="Mileage" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Engine_Volume" class="control-label">Engine_Volume</label>
+                    <input asp-for="Engine_Volume" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Color" class="control-label">Color</label>
+                    <input asp-for="Color" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Transmission" class="control-label">Transmission</label>
+                    <input asp-for="Transmission" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Drive" class="control-label">Drive</label>
+                    <input asp-for="Drive" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label">Price</label>
+                    <input asp-for="Price" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Delete Announcement" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:130px" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

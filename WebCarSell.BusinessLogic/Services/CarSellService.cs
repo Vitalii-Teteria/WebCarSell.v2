@@ -59,16 +59,15 @@ namespace WEBCarSell.BusinessLogic.Services
             var result = _mapper.Map<Model>(model);
             await _repository.Update(result);
         }
-        //public async Task<IEnumerable<ModelDto>> GetModelsList(Guid? id)
-        //{
-        //    var models = (await _repository.GetWhere<Model>(g => g.Id == id, include: g => g.Include(g => g.Name)));
-        //    return models.Select(q => q.ToModelDto()).ToList();
-        //}
-
         public async Task<ModelDto> GetModelById(Guid? id)
         {
             var model = await _repository.GetById<Model>(id);
             return _mapper.Map<ModelDto>(model);
+        }
+        public async Task DeleteModel(ModelDto model) 
+        {
+            var result = _mapper.Map<Model>(model);
+            await _repository.HardDelete(result);
         }
         public async Task<IEnumerable<UserDto>> GetUsers()
         {
