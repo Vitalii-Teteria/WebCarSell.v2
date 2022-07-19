@@ -49,32 +49,30 @@ namespace WebCarSell.Controllers
 
         [AllowAnonymous]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> ModelsList(string? name,SortState sortOrder = SortState.NameAsc) 
+        public async Task<IActionResult> ModelsList(string name) 
         {
-            var model = await _carSellService.GetModels();
-            var models = new List<ModelView>();
-            foreach (var item in model) 
+            var model = _mapper.Map<IEnumerable<ModelView>>( await _carSellService.GetModels());
+            IQueryable<ModelView> modelViews = model.AsQueryable<ModelView>();
+            modelViews.Include(c => c.Name);
+            switch (name) 
             {
-                models.Add(_mapper.Map<ModelView>(item));
-            }
-            IQueryable<ModelView> query = models.AsQueryable();
-            query = sortOrder switch
-            {
-                SortState.NameAsc => query.OrderBy(c => c.Name),
-                SortState.NameDesc => query.OrderByDescending(c => c.Name),
-                SortState.MileageAsc => query.OrderBy(c => c.Mileage),
-                SortState.MileageDesc => query.OrderByDescending(c => c.Mileage)
-            };
-            if (!string.IsNullOrEmpty(name))
-            {
-                query.Where(s => s.Name!.Contains(name));
+                case "Name_Asc":
+                    modelViews = modelViews.OrderBy(c => c.Name);
+                    break;
+                case "Name_Desc":
+                    modelViews = modelViews.OrderByDescending(c => c.Name);
+                    break;
+                case "Mileage_Asc":
+                    modelViews = modelViews.OrderBy(c => c.Mileage);
+                    break;
+                case "Mileage_Desc":
+                    modelViews = modelViews.OrderByDescending(c => c.Mileage);
+                    break;
             }
 
             ModelsListModel modelView = new ModelsListModel
                 (
-                    models,
-                    new SortViewModel(sortOrder),
-                    new FilterViewModel(models,name)
+                    modelViews
                 );
             return View(modelView);
 
