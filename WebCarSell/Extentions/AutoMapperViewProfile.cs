@@ -10,6 +10,8 @@ namespace WebCarSell.Extentions
         {
             CreateMap<ModelDto, ModelView>().ReverseMap();
             CreateMap<RegionDto, RegionModelView>().ReverseMap();
+            CreateMap<BrandDto, BrandModelView>().ReverseMap();
+            CreateMap<Car_bodyDto, Car_bodyViewModel>().ReverseMap();
         }
     }
 }

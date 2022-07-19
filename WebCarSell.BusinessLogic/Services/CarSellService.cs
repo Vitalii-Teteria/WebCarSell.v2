@@ -54,9 +54,57 @@ namespace WEBCarSell.BusinessLogic.Services
             await _repository.Create(models);
             return _mapper.Map<ModelDto>(models);
         }
+        public async Task<BrandDto> AddBrand(BrandDto model) 
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model), "model is empty");
+            }
+
+            var models = _mapper.Map<Brand>(model);
+            await _repository.Create(models);
+            return _mapper.Map<BrandDto>(models);
+        }
+        public async Task<RegionDto> AddRegion(RegionDto model)
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model), "model is empty");
+            }
+
+            var models = _mapper.Map<Region>(model);
+            await _repository.Create(models);
+            return _mapper.Map<RegionDto>(models);
+        }
+        public async Task<Car_bodyDto> AddBody(Car_bodyDto model)
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model), "model is empty");
+            }
+
+            var models = _mapper.Map<Car_body>(model);
+            await _repository.Create(models);
+            return _mapper.Map<Car_bodyDto>(models);
+        }
         public async Task UpdateModel(ModelDto model) 
         {
             var result = _mapper.Map<Model>(model);
+            await _repository.Update(result);
+        }
+        public async Task UpdateBrand(BrandDto model)
+        {
+            var result = _mapper.Map<Brand>(model);
+            await _repository.Update(result);
+        }
+        public async Task UpdateRegion(RegionDto model)
+        {
+            var result = _mapper.Map<Region>(model);
+            await _repository.Update(result);
+        }
+        public async Task UpdateCarBody(Car_bodyDto model)
+        {
+            var result = _mapper.Map<Car_body>(model);
             await _repository.Update(result);
         }
         public async Task<ModelDto> GetModelById(Guid? id)
@@ -64,11 +112,42 @@ namespace WEBCarSell.BusinessLogic.Services
             var model = await _repository.GetById<Model>(id);
             return _mapper.Map<ModelDto>(model);
         }
+        public async Task<BrandDto> GetBrandById(Guid? id)
+        {
+            var model = await _repository.GetById<Brand>(id);
+            return _mapper.Map<BrandDto>(model);
+        }
+        public async Task<RegionDto> GetRegionById(Guid? id)
+        {
+            var model = await _repository.GetById<Region>(id);
+            return _mapper.Map<RegionDto>(model);
+        }
+        public async Task<Car_bodyDto> GetBodyById(Guid? id)
+        {
+            var model = await _repository.GetById<Car_body>(id);
+            return _mapper.Map<Car_bodyDto>(model);
+        }
         public async Task DeleteModel(ModelDto model) 
         {
             var result = _mapper.Map<Model>(model);
             await _repository.HardDelete(result);
         }
+        public async Task DeleteBrand(BrandDto model)
+        {
+            var result = _mapper.Map<Brand>(model);
+            await _repository.HardDelete(result);
+        }
+        public async Task DeleteRegion(RegionDto model)
+        {
+            var result = _mapper.Map<Region>(model);
+            await _repository.HardDelete(result);
+        }
+        public async Task DeleteBody(Car_bodyDto model)
+        {
+            var result = _mapper.Map<Car_body>(model);
+            await _repository.HardDelete(result);
+        }
+
         public async Task<IEnumerable<UserDto>> GetUsers()
         {
             var users = _mapper.Map<IEnumerable<UserDto>>(await _repository.GetAll<UserDto>());
