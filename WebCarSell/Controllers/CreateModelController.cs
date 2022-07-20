@@ -48,7 +48,7 @@ namespace WebCarSell.Controllers
 
         [AllowAnonymous]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> ModelsList(string name) 
+        public async Task<IActionResult> ModelsList(string name, string? filtration) 
         {
             var model = _mapper.Map<IEnumerable<ModelView>>( await _carSellService.GetModels());
             IQueryable<ModelView> modelViews = model.AsQueryable<ModelView>();
@@ -67,11 +67,22 @@ namespace WebCarSell.Controllers
                 case "Mileage_Desc":
                     modelViews = modelViews.OrderByDescending(c => c.Mileage);
                     break;
+                case "EngineVolume_Asc":
+                    modelViews = modelViews.OrderBy(c => c.Engine_Volume);
+                    break;
+                case "EngineVolume_Desc":
+                    modelViews = modelViews.OrderByDescending(c => c.Engine_Volume);
+                    break;
+            }
+            if (!String.IsNullOrEmpty(filtration)) 
+            {
+                modelViews = modelViews.Where(s=>s.Name!.Contains(filtration));
             }
 
             ModelsListModel modelView = new ModelsListModel
                 (
-                    modelViews
+                    modelViews,
+                    filtration=filtration
                 );
             return View(modelView);
 

@@ -2,11 +2,12 @@
 {
     public class ModelsListModel
     {
-        public IQueryable<ModelView> ViewModels { get; set; }
-
-        public ModelsListModel( IQueryable<ModelView> modelViews) 
+        public IEnumerable<ModelView> ViewModels { get; set; }
+        public string filtrationName { get; set; }
+        public ModelsListModel(IEnumerable<ModelView> modelViews,string filtr) 
         {
             ViewModels = modelViews;
+            filtrationName = filtr;
         }
     }
 }

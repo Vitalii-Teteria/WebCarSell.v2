@@ -1,12 +1,64 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
 
- <a class="btn btn-outline-danger" asp-area="" asp-controller="Admin" asp-action="AddBrand">Add Brand</a>
-  <a class="btn btn-outline-danger" asp-area="" asp-controller="Admin" asp-action="AddRegion">Add Region</a>
-  <a class="btn btn-outline-danger" asp-area="" asp-controller="Admin" asp-action="AddCarBody">Add Car Body</a>
- <a class="btn btn-outline-danger" asp-area="" asp-controller="Admin" asp-action="GrudBrand">Grud Operations with Brands</a>
- <a class="btn btn-outline-danger" asp-area="" asp-controller="Admin" asp-action="GrudRegion">Grud Operations with Regions</a>
-  <a class="btn btn-outline-danger" asp-area="" asp-controller="Admin" asp-action="GrudCarBody">Grud Operations with Car Bodies</a>
+<h4 style="text-align:center; color:red; margin-top:30px;margin-bottom:20px;font-weight:bold">Admin Panel</h4>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 border" style="padding-top:5%; padding-bottom:10%">
+            <div class="row">
+                <div class="col">
+                    <label>Add a new Brand of Cars</label>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-danger" style="margin-left:120px" asp-area="" asp-controller="Admin" asp-action="AddBrand">Add Brand</a>
+                </div>
+            </div>
+            <div style="margin-bottom:10px"></div>
+            <div class="row">
+                <div class="col">
+                    <label>Add a new Region</label>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-danger" style="margin-left:120px" asp-area="" asp-controller="Admin" asp-action="AddRegion">Add Region</a>
+                </div>
+            </div>
+            <div style="margin-bottom:10px"></div>
+            <div class="row">
+                <div class="col">
+                    <label>Add a new Car Body</label>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-danger" style="margin-left:120px" asp-area="" asp-controller="Admin" asp-action="AddCarBody">Add Car Body</a>
+                </div>
+            </div>
+            <div style="margin-bottom:10px"></div>
+            <div class="row">
+                <div class="col">
+                    <label>Grud Operations with Brands</label>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-danger" style="margin-left:120px" asp-area="" asp-controller="Admin" asp-action="GrudBrand">Enter</a>
+                </div>
+            </div>
+            <div style="margin-bottom:10px"></div>
+            <div class="row">
+                <div class="col">
+                    <label>Grud Operations with Regions</label>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-danger" style="margin-left:120px" asp-area="" asp-controller="Admin" asp-action="GrudRegion">Enter</a>
+                </div>
+            </div>
+            <div style="margin-bottom:10px"></div>
+            <div class="row">
+                <div class="col">
+                    <label>Grud Operations with Car Bodies</label>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-danger" style="margin-left:120px" asp-area="" asp-controller="Admin" asp-action="GrudCarBody">Enter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
