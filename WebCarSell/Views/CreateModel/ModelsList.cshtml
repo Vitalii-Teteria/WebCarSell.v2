@@ -5,19 +5,29 @@
 }
 
 <h1>All Announcements</h1>
+<form method="get">
+    <div>
+        <label>Name</label>
+        <input name="filtration" />
+        <input type="submit" value="Filtering"/>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
                 <a asp-action="ModelsList" asp-route-name="Name_Asc">Name</a>
-                <a asp-action="ModelsList" asp-route-name="Name_Desc">Name desc</a>
+                <a asp-action="ModelsList" asp-route-name="Name_Desc">Desc</a>
             </th>
             <th>Year</th>
              <th>
                <a asp-action="ModelsList" asp-route-name="Mileage_Asc">Mileage</a>
-                <a asp-action="ModelsList" asp-route-name="Mileage_Desc">Mileage desc</a>
+                <a asp-action="ModelsList" asp-route-name="Mileage_Desc">Desc</a>
             </th>
-            <th>Engine Volume</th>
+            <th>
+                <a asp-action="ModelsList" asp-route-name="EngineVolume_Asc">Engine Volume</a>
+                <a asp-action="ModelsList" asp-route-name="EngineVolume_Desc">Desc</a>
+            </th>
             <th>Color</th>
             <th>Transmission</th>
             <th>Drive</th>
@@ -54,7 +64,6 @@
             </td>
             <td>
                 <a asp-action="EditModel" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="DeleteModel" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
