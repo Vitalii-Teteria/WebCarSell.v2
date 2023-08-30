@@ -20,7 +20,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                        <a  class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:60px" asp-area="" asp-controller="CreateModel" asp-action="ModelsList">Buy a Car</a>
+                           <a  class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:60px" asp-area="" asp-controller="CreateModel" asp-action="ModelsList">Models List</a>                       
                         </li>
                         <li class="nav-item">
                         <a class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:20px" asp-area="" asp-controller="CreateModel" asp-action="AddModel">New Announcement</a>
@@ -34,6 +34,13 @@
                             {
                                 
                             }
+                        </li>
+                        <li class="nav-item">
+                             @if(User.IsInRole("User"))
+                            {
+                                <a class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:20px" asp-area="" asp-controller="CreateModel" asp-action="MyModelsList">My Announcements</a>
+                            }
+                             
                         </li>
                     </ul>
                 </div>
@@ -62,7 +69,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container" style="text-align:center">
-            &copy; 2022 - WebCarSell - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - WebCarSell - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

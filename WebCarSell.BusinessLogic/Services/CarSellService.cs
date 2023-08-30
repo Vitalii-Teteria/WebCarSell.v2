@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using WEBCarSell.DataAccess.Repositories;
 using WebCarSell.BusinessLogic.Extensions;
 using AutoMapper;
+using WebCarSell.BusinessLogic.DTO;
 
 namespace WEBCarSell.BusinessLogic.Services
 {
@@ -22,12 +23,7 @@ namespace WEBCarSell.BusinessLogic.Services
         {
             _mapper = autoMapper;
             _repository = repository;
-        }
-        public async Task<IEnumerable<ModelDto>> GetModels() // rabotaet
-        {
-            var models = _mapper.Map<IEnumerable<ModelDto>>(await _repository.GetAll<Model>());
-            return models;
-        }
+        }   
         public async Task<IEnumerable<RegionDto>> GetRegions() 
         {
             var models = _mapper.Map<IEnumerable<RegionDto>>(await _repository.GetAll<Region>());
@@ -42,17 +38,6 @@ namespace WEBCarSell.BusinessLogic.Services
         {
             var models = _mapper.Map<IEnumerable<Car_bodyDto>>(await _repository.GetAll<Car_body>());
             return models;
-        }
-        public async Task<ModelDto> AddModel(ModelDto model) // rabotaet
-        {
-            if (model == null)
-            {
-                throw new ArgumentNullException(nameof(model), "model is empty");
-            }
-
-            var models = _mapper.Map<Model>(model);
-            await _repository.Create(models);
-            return _mapper.Map<ModelDto>(models);
         }
         public async Task<BrandDto> AddBrand(BrandDto model) 
         {
@@ -87,6 +72,28 @@ namespace WEBCarSell.BusinessLogic.Services
             await _repository.Create(models);
             return _mapper.Map<Car_bodyDto>(models);
         }
+        public async Task<SportsCategoryDto> AddCategory(SportsCategoryDto model)
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model), "model is empty");
+            }
+
+            var models = _mapper.Map<SportsCategory>(model);
+            await _repository.Create(models);
+            return _mapper.Map<SportsCategoryDto>(models);
+        }
+        public async Task<ModificationsDto> AddModification(ModificationsDto model)
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model), "model is empty");
+            }
+
+            var models = _mapper.Map<Modifications>(model);
+            await _repository.Create(models);
+            return _mapper.Map<ModificationsDto>(models);
+        }
         public async Task UpdateModel(ModelDto model) 
         {
             var result = _mapper.Map<Model>(model);
@@ -105,6 +112,16 @@ namespace WEBCarSell.BusinessLogic.Services
         public async Task UpdateCarBody(Car_bodyDto model)
         {
             var result = _mapper.Map<Car_body>(model);
+            await _repository.Update(result);
+        }
+        public async Task UpdateCategory(SportsCategoryDto model)
+        {
+            var result = _mapper.Map<SportsCategory>(model);
+            await _repository.Update(result);
+        }
+        public async Task UpdateModification(ModificationsDto model)
+        {
+            var result = _mapper.Map<Modifications>(model);
             await _repository.Update(result);
         }
         public async Task<ModelDto> GetModelById(Guid? id)
@@ -127,6 +144,21 @@ namespace WEBCarSell.BusinessLogic.Services
             var model = await _repository.GetById<Car_body>(id);
             return _mapper.Map<Car_bodyDto>(model);
         }
+        public async Task<SportsCategoryDto> GetCategoryById(Guid? id)
+        {
+            var model = await _repository.GetById<SportsCategory>(id);
+            return _mapper.Map<SportsCategoryDto>(model);
+        }
+        public async Task<ModificationsDto> GetModificationById(Guid? id)
+        {
+            var model = await _repository.GetById<Modifications>(id);
+            return _mapper.Map<ModificationsDto>(model);
+        }
+        public async Task DeleteUser(UserDto user) 
+        {
+            var users = _mapper.Map<User>(user);
+            await _repository.HardDelete(users);
+        }
         public async Task DeleteModel(ModelDto model) 
         {
             var result = _mapper.Map<Model>(model);
@@ -145,6 +177,16 @@ namespace WEBCarSell.BusinessLogic.Services
         public async Task DeleteBody(Car_bodyDto model)
         {
             var result = _mapper.Map<Car_body>(model);
+            await _repository.HardDelete(result);
+        }
+        public async Task DeleteCategory(SportsCategoryDto model)
+        {
+            var result = _mapper.Map<SportsCategory>(model);
+            await _repository.HardDelete(result);
+        }
+        public async Task DeleteModification(ModificationsDto model)
+        {
+            var result = _mapper.Map<Modifications>(model);
             await _repository.HardDelete(result);
         }
 

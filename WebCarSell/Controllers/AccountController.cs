@@ -31,13 +31,16 @@ namespace WebCarSell.Controllers
             return View();
         }
 
+
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel registerView) 
         {
+            //await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            //await _roleManager.CreateAsync(new IdentityRole("User"));
             if (ModelState.IsValid)
             {
-                User user = new User() { UserName = registerView.Login, SName = registerView.SName, Email = registerView.Email, Roles=registerView.Roles, EmailConfirmed = true };
+                User user = new User() { IdUser=Guid.NewGuid(), UserName = registerView.Login, SName = registerView.SName, Email = registerView.Email, Roles=registerView.Roles, EmailConfirmed = true };
                 var result = await _userManager.CreateAsync(user, registerView.Password);
                 if (result.Succeeded)
                 {
@@ -45,6 +48,10 @@ namespace WebCarSell.Controllers
                     {
                         _userManager.AddToRoleAsync(user, "User").Wait();
                     }
+                    //if (user.Roles == "Admin")
+                    //{
+                    //    _userManager.AddToRoleAsync(user, "Admin").Wait();
+                    //}
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }

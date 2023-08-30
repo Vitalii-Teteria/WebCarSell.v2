@@ -155,33 +155,6 @@ namespace WebCarSell.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WebCarSell.DataAccess.Entities.Administrator", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Administrators");
-                });
-
             modelBuilder.Entity("WebCarSell.DataAccess.Entities.Brand", b =>
                 {
                     b.Property<Guid>("Id")
@@ -232,8 +205,17 @@ namespace WebCarSell.DataAccess.Migrations
                     b.Property<Guid>("BrandId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Color")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountOfModifications")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Drive")
@@ -249,10 +231,20 @@ namespace WebCarSell.DataAccess.Migrations
                     b.Property<float>("Mileage")
                         .HasColumnType("real");
 
+                    b.Property<Guid>("ModificationId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("OwnerPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Picture")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -260,9 +252,15 @@ namespace WebCarSell.DataAccess.Migrations
                     b.Property<Guid>("RegionId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("SummaryPriceOfModification")
+                        .HasColumnType("int");
+
                     b.Property<string>("Transmission")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -272,23 +270,49 @@ namespace WebCarSell.DataAccess.Migrations
                     b.ToTable("Models");
                 });
 
-            modelBuilder.Entity("WebCarSell.DataAccess.Entities.Photos", b =>
+            modelBuilder.Entity("WebCarSell.DataAccess.Entities.Model_Modifications", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<Guid>("ModelId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<byte[]>("Data")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhotoName")
+                    b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Photos");
+                    b.ToTable("ModelModifications");
+                });
+
+            modelBuilder.Entity("WebCarSell.DataAccess.Entities.Modifications", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("SportCategory")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Modifications");
                 });
 
             modelBuilder.Entity("WebCarSell.DataAccess.Entities.Region", b =>
@@ -310,6 +334,25 @@ namespace WebCarSell.DataAccess.Migrations
                     b.ToTable("Regions");
                 });
 
+            modelBuilder.Entity("WebCarSell.DataAccess.Entities.SportsCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SportsCategories");
+                });
+
             modelBuilder.Entity("WebCarSell.DataAccess.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -328,6 +371,9 @@ namespace WebCarSell.DataAccess.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<Guid>("IdUser")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

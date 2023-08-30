@@ -43,6 +43,41 @@
                  <label asp-for="Price" class="control-label">Price</label>
                  <input asp-for="Price" class="form-control"/>
             </div>
+              <div class="form-group">
+                 <label asp-for="OwnerPhone" class="control-label">OwnerPhone</label>
+                 <input asp-for="OwnerPhone" class="form-control"/>
+                 <span asp-validation-for="OwnerPhone" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                 <label asp-for="CountOfModifications" class="control-label">Count of Modifications</label>
+                 <input asp-for="CountOfModifications" class="form-control"/>
+                 <span asp-validation-for="CountOfModifications" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                 <label asp-for="Description" class="control-label">Description</label>
+                 <textarea asp-for="Description" class="form-control"></textarea>
+                 <span asp-validation-for="Description" class="text-danger"></span>
+            </div>  
+            <div class="form-group">
+                 <label asp-for="RegionId" class="control-label">Region</label>
+                 <select asp-for="RegionId" required class="form-select" asp-items="ViewBag.Region"></select>
+            </div>
+            <div class="form-group">
+                 <label asp-for="BrandId" class="control-label">Brand</label>
+                 <select asp-for="BrandId" required class="form-select" asp-items="ViewBag.Brand"></select>
+            </div>
+            <div class="form-group">
+                 <label asp-for="BodyId" class="control-label">Body</label>
+                 <select asp-for="BodyId" required class="form-select" asp-items="ViewBag.Body"></select>
+            </div> 
+             <div class="form-group">
+                 <label asp-for="ModificationId" class="control-label">Modifications</label>
+                 <select asp-for="ModificationId" required class="form-select" asp-items="ViewBag.Modification"></select>
+            </div>
+             <div class="form-group">
+                 <label asp-for="CategoryId" class="control-label">Sport`s Category</label>
+                 <select asp-for="CategoryId" required class="form-select" asp-items="ViewBag.Category"></select>
+            </div> 
             <div class="form-group">
                 <input type="submit" value="Edit Information" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:130px" />
             </div>

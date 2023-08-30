@@ -5,25 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebCarSell.DataAccess.Migrations
 {
-    public partial class InitDb : Migration
+    public partial class SportsCarDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Administrators",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Administrators", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -43,6 +28,7 @@ namespace WebCarSell.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    IdUser = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Roles = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -93,6 +79,20 @@ namespace WebCarSell.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ModelModifications",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ModelId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ModelModifications", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Models",
                 columns: table => new
                 {
@@ -104,11 +104,19 @@ namespace WebCarSell.DataAccess.Migrations
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Transmission = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Drive = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BrandId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
+                    OwnerPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Picture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    CountOfModifications = table.Column<int>(type: "int", nullable: false),
+                    SummaryPriceOfModification = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ModificationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BrandId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BodyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RegionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    RegionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -116,17 +124,18 @@ namespace WebCarSell.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Photos",
+                name: "Modifications",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PhotoName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Data = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    SportCategory = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Photos", x => x.Id);
+                    table.PrimaryKey("PK_Modifications", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -140,6 +149,19 @@ namespace WebCarSell.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Regions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SportsCategories",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SportsCategories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -291,9 +313,6 @@ namespace WebCarSell.DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Administrators");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -315,13 +334,19 @@ namespace WebCarSell.DataAccess.Migrations
                 name: "car_Bodies");
 
             migrationBuilder.DropTable(
+                name: "ModelModifications");
+
+            migrationBuilder.DropTable(
                 name: "Models");
 
             migrationBuilder.DropTable(
-                name: "Photos");
+                name: "Modifications");
 
             migrationBuilder.DropTable(
                 name: "Regions");
+
+            migrationBuilder.DropTable(
+                name: "SportsCategories");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

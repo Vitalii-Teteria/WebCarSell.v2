@@ -12,3 +12,17 @@ C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.pdb
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.genruntimeconfig.cache
 C:\Users\Vitalii\source\Repos\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\ref\WebCarSell.DataAccess.dll
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.deps.json
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.runtimeconfig.json
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.dll
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\bin\Debug\net6.0\WebCarSell.DataAccess.pdb
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.csproj.AssemblyReference.cache
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.AssemblyInfoInputs.cache
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.AssemblyInfo.cs
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.csproj.CoreCompileInputs.cache
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.dll
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\refint\WebCarSell.DataAccess.dll
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.pdb
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\WebCarSell.DataAccess.genruntimeconfig.cache
+D:\diplomproject\WebCarSell.v2\WebCarSell.DataAccess\obj\Debug\net6.0\ref\WebCarSell.DataAccess.dll

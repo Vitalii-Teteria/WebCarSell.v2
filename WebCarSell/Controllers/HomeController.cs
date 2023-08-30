@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebCarSell.BusinessLogic.Interfaces;
 using WebCarSell.Models;
 using WEBCarSell.BusinessLogic.DTO;
 using WEBCarSell.BusinessLogic.Interfaces;
@@ -11,21 +12,22 @@ namespace WebCarSell.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ICarSellService _carSellService;
+        private readonly ICreateModelService _createModelService;
         private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger, ICarSellService carSellService, IMapper mapper)
+        public HomeController(ILogger<HomeController> logger, ICarSellService carSellService, IMapper mapper, ICreateModelService createModelService)
         {
             _carSellService = carSellService;
             _logger = logger;
             _mapper = mapper;
-
+            _createModelService = createModelService;
         }
 
         [HttpGet]
         public async Task<ActionResult> Index(int page=1)
         {
             int pageSize = 6;
-            var model = await _carSellService.GetModels();           
+            var model = await _createModelService.GetModels();           
             var models = new List<ModelView>();
             foreach (var modelcar in model) 
             {
