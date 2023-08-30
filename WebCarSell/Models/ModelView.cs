@@ -26,8 +26,16 @@ namespace WebCarSell.Models
 
         public string? Drive { get; set; }
         public int Price { get; set; }
+        //public IFormFile Picture { get; set; }
+        public string? OwnerPhone { get; set; }
+        public string? Description { get; set; }
+        public int CountOfModifications { get; set; }
+        public int SummaryPriceOfModification { get; set; }
         public Guid RegionId { get; set; }
         public Guid BodyId { get; set; }
         public Guid BrandId { get; set; }
+        public Guid ModificationId { get; set; }
+        public Guid CategoryId { get; set; }
+        public Guid UserId  { get; set; }
     }
 }

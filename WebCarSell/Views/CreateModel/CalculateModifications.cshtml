@@ -1,0 +1,159 @@
+﻿@model ModelModificationsSelectList
+@{
+}
+
+<title>Calculator of modifications </title>
+
+<h4 style="text-align:center; color:red; margin-top:30px;font-weight:bold">Calculator of modifications installed in car</h4>
+
+<div class="container">
+<div class="row justify-content-md-center">
+    <div class="col-md-4" style="padding-top:5%; padding-bottom:10%">
+        <form asp-action="CalculateModifications"  method="post">
+             <div class="form-group">
+                        <div class="createButton" style="margin-bottom:10px">
+                            <input type="button" id="countButton" value="Add Modification" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px;"/>
+                        </div>
+
+                        <div class="row" style="width:378px">
+                            <div class="col" id ="modifications">
+                                <select id="selectList" onchange="getSelectedOption()" asp-for="@Model.result.Name" class="form-select">
+                                @foreach (var modifications in Model.ModelModifications)
+                                {
+                                <option class="selectedItem"  value="@modifications.Price">@modifications.Name</option>
+                                }
+                                </select>   
+                                 <label>Value of Selected Modification:</label>
+                                <div id="alertPriceOfModification"></div>
+                                <label style="font-weight:bold; font-size:16px; color:red">Summary Value (Recomended Price)</label>
+                                <div id=result1></div>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none; width:378px" id="2">
+                            <div class="col" id ="modifications">
+                                <select id="selectList2" onchange="getSelectedOption()" asp-for="@Model.result.Name" class="form-select">
+                                @foreach (var modifications in Model.ModelModifications)
+                                {
+                                <option class="selectedItem2"  value="@modifications.Price">@modifications.Name</option>
+                                }
+                                </select>
+                                <label>Value of Selected Modification:</label>
+                                <div id="alertPriceOfModification2"></div>
+                                <label style="font-weight:bold; font-size:16px; color:red">Summary Value (Recomended Price)</label>
+                               <div id=result2></div>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none; width:378px" id="3">
+                            <div class="col" id ="modifications">
+                                <select id="selectList3" onchange="getSelectedOption()" asp-for="@Model.result.Name" class="form-select">
+                                @foreach (var modifications in Model.ModelModifications)
+                                {
+                                <option class="selectedItem3"  value="@modifications.Price">@modifications.Name</option>
+                                }
+                                </select>
+                                <label>Value of Selected Modification:</label>
+                                <div id="alertPriceOfModification3"></div>
+                                <label style="font-weight:bold; font-size:16px; color:red">Summary Value</label>
+                                <div id=result3></div>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none; width:378px" id="4">
+                            <div class="col" id ="modifications">
+                                <select id="selectList4" onchange="getSelectedOption()" asp-for="@Model.result.Name" class="form-select">
+                                @foreach (var modifications in Model.ModelModifications)
+                                {
+                                <option class="selectedItem4"  value="@modifications.Price">@modifications.Name</option>
+                                }
+                                </select>
+                                <label>Value of Selected Modification:</label>
+                                <div id="alertPriceOfModification4"></div>
+                                <label style="font-weight:bold; font-size:16px; color:red">Summary Value</label>
+                                <div id=result4></div>
+                            </div>
+                        </div>
+                         <div class="row" style="display:none; width:378px" id="5">
+                            <div class="col" id ="modifications">
+                                <select id="selectList5" onchange="getSelectedOption()" asp-for="@Model.result.Name" class="form-select">
+                                @foreach (var modifications in Model.ModelModifications)
+                                {
+                                <option class="selectedItem5"  value="@modifications.Price">@modifications.Name</option>
+                                }
+                                </select>
+                                 <label>Value of Selected Modification:</label>
+                                <div id="alertPriceOfModification5"></div>
+                                <label style="font-weight:bold; font-size:16px; color:red">Summary Value</label>
+                                <div id=result5></div>
+                            </div>
+                        </div>
+            </div>
+        </form>
+     </div>
+    </div>
+</div>
+
+<script>
+var selectName = 2;
+ document.getElementById('countButton').addEventListener("click", function(){
+     if(selectName==5){
+         document.getElementById('countButton').style.display='none';
+     }
+     if(selectName<=5){
+         console.log(selectName);
+         var element = document.getElementById(selectName);
+         element.style.display='block';
+         selectName=selectName+1;
+     }
+ });
+function getSelectedOption()
+{
+    var selectItem = document.getElementById("selectList");
+    var itemPrice = document.querySelector(".selectedItem");
+    var selectitem2 = document.getElementById("selectList2");
+    var itemPrice2 = document.querySelector(".selectedItem2");
+    var selectitem3 = document.getElementById("selectList3");
+    var itemPrice3 = document.querySelector(".selectedItem3");
+    var selectitem4 = document.getElementById("selectList4");
+    var itemPrice4 = document.querySelector(".selectedItem4");
+    var selectitem5 = document.getElementById("selectList5");
+    var itemPrice5 = document.querySelector(".selectedItem5");
+
+    var selectedValue = selectItem.value;
+    var selectedValue2 = selectitem2.value;
+    var selectedValue3 = selectitem3.value;
+    var selectedValue4 = selectitem4.value;
+    var selectedValue5 = selectitem5.value;
+
+    let modification1 =Number(selectedValue);
+    let modification2 =Number(selectedValue2);
+    let modification3 =Number(selectedValue3);
+    let modification4 =Number(selectedValue4);
+    let modification5 =Number(selectedValue5);
+    
+    document.getElementById("alertPriceOfModification").innerHTML=modification1;
+    document.getElementById("alertPriceOfModification2").innerHTML=modification2;
+    document.getElementById("alertPriceOfModification3").innerHTML=modification3;
+    document.getElementById("alertPriceOfModification4").innerHTML=modification4;
+    document.getElementById("alertPriceOfModification5").innerHTML=modification5;
+
+    
+        if(selectName=1){
+            document.getElementById("result1").innerHTML = modification1;
+        }
+        if(selectName=2){
+            let result2 = modification1+modification2;
+            document.getElementById("result2").innerHTML = result2;
+        }
+        if(selectName=3){
+            let result3 =  modification1+modification2+modification3;
+            document.getElementById("result3").innerHTML = result3;
+        }
+        if(selectName=4){
+            let result4 =  modification1+modification2+modification3+modification4;
+            document.getElementById("result4").innerHTML = result4;
+        }
+        if(selectName=5){
+            let result5 = modification1+modification2+modification3+modification4+modification5;
+            document.getElementById("result5").innerHTML = result5;
+        }
+}
+</script>

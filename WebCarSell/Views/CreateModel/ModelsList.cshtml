@@ -29,9 +29,22 @@
                 <a asp-action="ModelsList" asp-route-name="EngineVolume_Desc">Desc</a>
             </th>
             <th>Color</th>
-            <th>Transmission</th>
-            <th>Drive</th>
-            <th>Price</th>
+            <th>
+                <a asp-action="ModelsList" asp-route-name="Transmission_Asc">Transmission</a>
+                <a asp-action="ModelsList" asp-route-name="Transmission_Desc">Desc</a>
+            </th>
+            <th>
+                <a asp-action="ModelsList" asp-route-name="Drive_Asc">Drive</a>
+                <a asp-action="ModelsList" asp-route-name="Drive_Desc">Desc</a>
+            </th>
+            <th>
+                <a asp-action="ModelsList" asp-route-name="Price_Asc">Price</a>
+                <a asp-action="ModelsList" asp-route-name="Price_Desc">Desc</a>
+            </th>
+            <th>Owner Phone</th>
+            <th>Description</th>
+            <th>Count of Modification</th>
+            <th>Summary Price of modificarions</th>
             <th></th>
         </tr>
     </thead>
@@ -63,9 +76,28 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                <a asp-action="EditModel" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="DeleteModel" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.OwnerPhone)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountOfModifications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SummaryPriceOfModification)
+            </td>
+            @if(User.IsInRole("Admin"))
+                {
+                  <td>
+                <a asp-action="DeleteModelByAdmin" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                }
+                else
+                {
+                    <td style="display:none"></td>
+                }
+
         </tr>
 }
     </tbody>

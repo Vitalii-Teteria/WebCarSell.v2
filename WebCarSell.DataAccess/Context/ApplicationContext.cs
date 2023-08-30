@@ -11,12 +11,14 @@ namespace WebCarSell.DataAccess.Context
 {
     public class ApplicationContext : IdentityDbContext<User>
     {
-        public DbSet<Administrator> Administrators { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Car_body> car_Bodies { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Region> Regions { get; set; }
-        public DbSet<Photos> Photos { get; set; }
+        public DbSet<Modifications> Modifications { get; set; }
+        public DbSet<SportsCategory> SportsCategories { get; set; }
+        public DbSet<Model_Modifications> ModelModifications { get; set; }
+        
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) 
             : base(options)

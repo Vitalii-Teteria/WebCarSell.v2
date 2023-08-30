@@ -11,7 +11,7 @@ namespace WebCarSell.DataAccess.Entities
 {
     public class User : IdentityUser, ISoftDeletable
     {
-
+        public Guid IdUser { get; set; }
         [Required(AllowEmptyStrings = false)]
         [StringLength(40, MinimumLength = 3)]
         public string SName { get; set; }

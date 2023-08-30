@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ModificationsView
+
+
+<div class="container">
+<div class="row justify-content-md-center">
+    <div class="col-md-4" style="padding-top:5%; padding-bottom:10%">
+        <form asp-action="DeleteModification"  method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                 <label asp-for="Name" class="control-label">Name</label>
+                 <input asp-for="Name" class="form-control"/>
+                 <span asp-validation-for="Name" class="text-danger"></span>
+            </div>      
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true" style="font-weight: bold; margin-top:10px; margin-left:150px" />
+            </div>
+        </form>
+     </div>
+    </div>
+</div>

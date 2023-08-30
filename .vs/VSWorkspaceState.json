@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebCarSell",
+    "\\WebCarSell\\Views",
+    "\\WebCarSell\\Views\\Account",
+    "\\WebCarSell\\Views\\CreateModel"
   ],
-  "SelectedNode": "\\WebCarSell.sln",
+  "SelectedNode": "\\WebCarSell\\Views\\Account\\Login.cshtml",
   "PreviewInSolutionExplorer": false
 }

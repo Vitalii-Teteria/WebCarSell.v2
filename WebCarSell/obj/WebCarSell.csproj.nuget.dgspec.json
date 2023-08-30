@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj": {}
+    "D:\\diplomproject\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {
+    "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+        "projectUniqueName": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
         "projectName": "WebCarSell.BusinessLogic",
-        "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\obj\\",
+        "projectPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\teter\\.nuget\\packages\\",
+        "outputPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj"
+              "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
+                "projectPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj"
               }
             }
           }
@@ -51,6 +51,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
             }
           },
           "imports": [
@@ -59,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
+    "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
+        "projectUniqueName": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
         "projectName": "WebCarSell.DataAccess",
-        "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\obj\\",
+        "projectPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\teter\\.nuget\\packages\\",
+        "outputPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -137,7 +142,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -146,21 +152,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj": {
+    "D:\\diplomproject\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
+        "projectUniqueName": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
         "projectName": "WebCarSell",
-        "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
-        "packagesPath": "C:\\Users\\Vitalii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell\\obj\\",
+        "projectPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell\\WebCarSell.csproj",
+        "packagesPath": "C:\\Users\\teter\\.nuget\\packages\\",
+        "outputPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitalii\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,17 +174,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj"
+              "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj": {
+                "projectPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.BusinessLogic\\WebCarSell.BusinessLogic.csproj"
               },
-              "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Vitalii\\source\\Repos\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj"
+              "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj": {
+                "projectPath": "D:\\diplomproject\\WebCarSell.v2\\WebCarSell.DataAccess\\WebCarSell.DataAccess.csproj"
               }
             }
           }
@@ -238,7 +245,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -250,7 +258,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

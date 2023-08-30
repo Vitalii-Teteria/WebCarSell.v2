@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using WebCarSell.BusinessLogic.DTO;
+using WebCarSell.BusinessLogic.Interfaces;
 using WebCarSell.Models;
 using WEBCarSell.BusinessLogic.DTO;
 using WEBCarSell.BusinessLogic.Interfaces;
@@ -9,18 +12,20 @@ using WEBCarSell.BusinessLogic.Interfaces;
 namespace WebCarSell.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly ICarSellService _carSellService;
+        private readonly ICreateModelService _createModelService;
         private readonly ILogger<AdminController> _logger;
         private readonly IMapper _mapper;
 
-        public AdminController(ILogger<AdminController> logger, ICarSellService carSellService, IMapper mapper)
+        public AdminController(ILogger<AdminController> logger, ICarSellService carSellService, IMapper mapper, ICreateModelService createModelService)
         {
             _carSellService = carSellService;
             _logger = logger;
             _mapper = mapper;
+            _createModelService = createModelService;
         }
 
         [HttpGet]
@@ -69,6 +74,36 @@ namespace WebCarSell.Controllers
             var body = _mapper.Map<Car_bodyDto>(carBodyModel);
             await _carSellService.AddBody(body);
             return View(carBodyModel);
+        }
+
+        [HttpGet]
+        public IActionResult AddCategory() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCategory(SportsCategoryView sportsCategoryModel) 
+        {
+            var category = _mapper.Map<SportsCategoryDto>(sportsCategoryModel);
+            await _carSellService.AddCategory(category);
+            return View(sportsCategoryModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> AddModification()
+        {
+            var categoryModification = await _createModelService.GetCategories();
+            ViewBag.Category = new SelectList(categoryModification, "Id", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddModification(ModificationsView modificationsModel) 
+        {
+            var modifications = _mapper.Map<ModificationsDto>(modificationsModel);
+            await _carSellService.AddModification(modifications);
+            return View(modificationsModel);
         }
 
         public async Task<IActionResult> GrudBrand() 
@@ -224,6 +259,108 @@ namespace WebCarSell.Controllers
             var body = _mapper.Map<Car_bodyDto>(modelView);
             await _carSellService.DeleteBody(body);
             return RedirectToAction("GrudBrand", "Admin");
+        }
+
+        public async Task<IActionResult> CrudCategory()
+        {
+            var category = await _createModelService.GetCategories();
+            var categories = new List<SportsCategoryView>();
+            foreach (var categoryModel in category)
+            {
+                categories.Add(_mapper.Map<SportsCategoryView>(categoryModel));
+            }
+            CategoryList categotyList = new CategoryList(categories);
+            return View(categotyList);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditCategory(Guid? id)
+        {
+            if (id != null)
+            {
+                var requestId = await _carSellService.GetCategoryById(id);
+                var model = _mapper.Map<SportsCategoryView>(requestId);
+                if (requestId != null) return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditCategory(SportsCategoryView modelView)
+        {
+            var category = _mapper.Map<SportsCategoryDto>(modelView);
+            await _carSellService.UpdateCategory(category);
+            return RedirectToAction("CrudCategory", "Admin");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteCategory(Guid? id)
+        {
+            if (id != null)
+            {
+                var request = await _carSellService.GetCategoryById(id);
+                var model = _mapper.Map<SportsCategoryView>(request);
+                if (request != null) return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteCategory(SportsCategoryView modelView)
+        {
+            var category = _mapper.Map<SportsCategoryDto>(modelView);
+            await _carSellService.DeleteCategory(category);
+            return RedirectToAction("CrudCategory", "Admin");
+        }
+        public async Task<IActionResult> CrudModification()
+        {
+            var modification = await _createModelService.GetModifications();
+            var modifications = new List<ModificationsView>();
+            foreach (var modificationModel in modification)
+            {
+                modifications.Add(_mapper.Map<ModificationsView>(modificationModel));
+            }
+            ModificationList modificationList = new ModificationList(modifications);
+            return View(modificationList);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditModification(Guid? id)
+        {
+            if (id != null)
+            {
+                var requestId = await _carSellService.GetModificationById(id);
+                var model = _mapper.Map<ModificationsView>(requestId);
+                if (requestId != null) return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditModification(ModificationsView modelView)
+        {
+            var modification = _mapper.Map<ModificationsDto>(modelView);
+            await _carSellService.UpdateModification(modification);
+            return RedirectToAction("CrudModification", "Admin");
+        }
+        [HttpGet]
+        public async Task<IActionResult> DeleteModification(Guid? id)
+        {
+            if (id != null)
+            {
+                var request = await _carSellService.GetModificationById(id);
+                var model = _mapper.Map<ModificationsView>(request);
+                if (request != null) return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteModifications(ModificationsView modelView)
+        {
+            var modification = _mapper.Map<ModificationsDto>(modelView);
+            await _carSellService.DeleteModification(modification);
+            return RedirectToAction("CrudModification", "Admin");
         }
     }
 }

@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using WebCarSell.Models;
+@model ModificationList
+
+<h1>All Modifications</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>        
+@foreach (var item in Model.Modifications) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td> 
+            <td>
+                <a asp-action="EditModification" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="DeleteModification" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

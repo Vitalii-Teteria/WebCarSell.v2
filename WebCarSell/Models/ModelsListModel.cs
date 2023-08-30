@@ -4,10 +4,11 @@
     {
         public IEnumerable<ModelView> ViewModels { get; set; }
         public string filtrationName { get; set; }
-        public ModelsListModel(IEnumerable<ModelView> modelViews,string filtr) 
+        public ModelsListModel(IEnumerable<ModelView> modelViews, string filtr)
         {
             ViewModels = modelViews;
             filtrationName = filtr;
+
         }
     }
 }

@@ -12,10 +12,11 @@
     <div class="col-md-4" style="padding-top:5%; padding-bottom:10%">
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group; margin-bottom:10px">
+            <div class="form-group; margin-bottom:10px;" style="display:none">
                 <label asp-for="Roles" class="control-label"></label>
                 <select asp-for="Roles" class="dropdown-item">
                 <option value="User">User</option>
+                <!--<option value="Admin">Admin</option>-->
                 </select>
                 <span asp-validation-for="Roles" class="text-danger"></span>
             </div>

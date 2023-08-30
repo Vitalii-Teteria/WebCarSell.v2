@@ -11,6 +11,9 @@ using WEBCarSell.BusinessLogic.Interfaces;
 using WEBCarSell.BusinessLogic.Services;
 using WEBCarSell.DataAccess.Repositories;
 using Microsoft.AspNetCore.Authentication;
+using WebCarSell.BusinessLogic.Interfaces;
+using WebCarSell.BusinessLogic.Services;
+using WebCarSell.DataAccess.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,7 +48,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddScoped<IRepository, GenericRepository>();
+builder.Services.AddScoped<IModelRepository, ModelRepository>();
 builder.Services.AddScoped<ICarSellService, CarSellService>();
+builder.Services.AddScoped<ICreateModelService, CreateModelService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
